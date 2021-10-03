@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+}
+
+header {
+    padding: 2vh;
+    background-image: url('header-background.jpeg');
+}
+
+h1 {
+    color: white;
+    -webkit-text-stroke: 1.5px black;
+    font-size: 4em;
+}
