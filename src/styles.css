@@ -12,3 +12,14 @@ h1 {
     -webkit-text-stroke: 1.5px black;
     font-size: 4em;
 }
+
+.weather-wrapper {
+    display: grid;
+    background-color: yellow;
+    padding: 100px;
+}
+
+.weather-wrapper > * {
+    font-size: 2em;
+    border: 1px solid black;
+}
