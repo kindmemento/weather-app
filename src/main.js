@@ -1,32 +1,22 @@
-import config from "./config.js";
-const kelvinToCelsius = require('kelvin-to-celsius');
+import getData from "./getData";
 
-async function getData(input) {
-  const data = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${config.API_KEY}`
-  );
-  const data2 = await data.json();
+const submit = document.querySelector('submit')
+const input = document.querySelector("input")
+const icon = document.querySelector('[data-img]')
+const status = document.querySelector('[data-status]')
+const location = document.querySelector('[data-location]')
+const wind = document.querySelector('[data-wind]')
+const temperature = document.querySelector('[data-temperature]')
+const humidity = document.querySelector('[data-humidity]')
 
-  console.log(data2)
-
-  city.innerHTML = data2.name
-  degree.innerHTML = kelvinToCelsius(data2.main.temp) + '°'
-  
-  // const data3 = {
-  //   name: data2.name,
-  //   temp: data2.main.temp,
-  //   weather: {
-  //     main: data2.weather[0].main,
-  //     description: data2.weather[0].description
-  //   },
-  //   wind: {
-  //     degree: data2.wind[0],
-  //     speed: data2.wind.speed
-  //   }
-  // }
+submit.onclick = () => {
+  getData(input.value).then((data) => {
+    icon.src = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
+    status.innerText = data.weather[0].main
+    location.innerText = data.name;
+    wind.innerText = Math.round(data.wind.speed) + ' kmh'
+    temperature.innerText = data.main.temp + '°C'
+    humidity.innerText = data.main.humidity + '%'
+    input.value = ''
+  });
 }
-
-getData('london')
-
-const city = document.querySelector('#city')
-const degree = document.querySelector('#degree')
