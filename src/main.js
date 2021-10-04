@@ -9,7 +9,7 @@ const wind = document.querySelector('[data-wind]')
 const temperature = document.querySelector('[data-temperature]')
 const humidity = document.querySelector('[data-humidity]')
 
-submit.onclick = () => {
+function displayResults() {
   getData(input.value).then((data) => {
     icon.src = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
     status.innerText = data.weather[0].main
@@ -20,3 +20,15 @@ submit.onclick = () => {
     input.value = ''
   });
 }
+
+submit.onclick = () => {
+  displayResults()
+}
+
+
+document.body.addEventListener('keydown', (e) => {
+  if (input.value !== '' && e.key === 'Enter') {
+      displayResults()
+    }
+  }
+)
