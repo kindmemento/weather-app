@@ -6,22 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="../dist/main.js" type="module" defer></script>
+    <script src="../dist/main.js" defer></script>
 </head>
 <header>
     <h1>Weather App</h1>
 </header>
 <body>
-    <div class="weather-wrapper">
-        <div class="first">
-            <span id="city"></span>
+    <div class="container">
+        <div class="header">
+            <div class="icon-container">
+                <img src="#" data-img>
+            </div>
         </div>
-        <div class="second">
-            <span id="degree"></span>
-
-        </div>
-        <div class="third">
-
+        <div class="content">
+            <div class="gen-info">
+                <div class="status" data-status>Status</div>
+                <div class="location" data-location>Location</div>
+            </div>
+            <div class="details">
+                <div class="detail">
+                    <div class="title">Wind</div>
+                    <div class="value" data-wind>Value</div>
+                </div>
+                <div class="detail">
+                    <div class="title">Temperature</div>
+                    <div class="value" data-temperature>Value</div>
+                </div>
+                <div class="detail">
+                    <div class="title">Humidity</div>
+                    <div class="value" data-humidity>Value</div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Enter a city">
+                <submit>Submit</submit>
+            </div>
         </div>
     </div>
 </body>
