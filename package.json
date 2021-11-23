@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/kindmemento/weather-app#readme",
   "dependencies": {
-    "dotenv-webpack": "^7.0.3",
-    "kelvin-to-celsius": "^1.1.0",
-    "kelvin-to-fahrenheit": "^1.1.0"
+    "dotenv-webpack": "^7.0.3"
   },
   "devDependencies": {
     "webpack": "^5.56.0",
